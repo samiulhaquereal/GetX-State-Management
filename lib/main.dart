@@ -29,12 +29,13 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(child: Scaffold(
       appBar: AppBar(title: Text('GetX'),centerTitle: true,),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          ElevatedButton(onPressed: ()=> Get.to(SnacKbar()), child: Text('Page 1')),
-        ],
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(onPressed: ()=> Get.to(SnacKbar()), child: Text('Page 1')),
+          ],
+        ),
       ),
     ));
   }

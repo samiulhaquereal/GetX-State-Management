@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx/dialog.dart';
+import 'package:getx/routename.dart';
 import 'package:getx/snackbar.dart';
 
 import 'bottomsheet.dart';
@@ -22,6 +23,10 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: const MyHomePage(),
+      initialRoute: '/',
+      defaultTransition: Transition.rightToLeft,
+      getPages: appPages,
+      unknownRoute: GetPage(name: '/notfound', page: ()=> unknownRoutepage()),
     );
   }
 }
@@ -36,8 +41,8 @@ class MyHomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ElevatedButton(onPressed: ()=> Get.to(SnacKbar()), child: Text('SnackBar')),
-            ElevatedButton(onPressed: ()=> Get.to(MyHomePage2()), child: Text('Dialog')),
+            ElevatedButton(onPressed: ()=> Get.toNamed('/snackbar?channel=Snackbar&content=Yeap Boy'), child: Text('SnackBar')),
+            ElevatedButton(onPressed: ()=> Get.toNamed('/dialogpage/Dialog'), child: Text('Dialog')),
             ElevatedButton(onPressed: ()=> Get.to(BottomSheetTheme(),arguments: 'Bottom Sheet & Theme'), child: Text('Bottom Sheet')),
           ],
         ),

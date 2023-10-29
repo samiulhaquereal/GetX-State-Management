@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx/dialog.dart';
 import 'package:getx/snackbar.dart';
 
 void main() {
@@ -33,7 +34,8 @@ class MyHomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ElevatedButton(onPressed: ()=> Get.to(SnacKbar()), child: Text('Page 1')),
+            ElevatedButton(onPressed: ()=> Get.to(SnacKbar()), child: Text('SnackBar')),
+            ElevatedButton(onPressed: ()=> Get.to(MyHomePage2()), child: Text('Dialog')),
           ],
         ),
       ),

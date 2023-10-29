@@ -8,7 +8,7 @@ class BottomSheetTheme extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(title: Text('BottomSheet & Theme'),centerTitle: true,),
+        appBar: AppBar(title: Text('${Get.arguments}'),centerTitle: true,),
         body: Center(
           child: ElevatedButton(
             child: Text('Click'),

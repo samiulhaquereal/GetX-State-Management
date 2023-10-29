@@ -38,7 +38,7 @@ class MyHomePage extends StatelessWidget {
           children: [
             ElevatedButton(onPressed: ()=> Get.to(SnacKbar()), child: Text('SnackBar')),
             ElevatedButton(onPressed: ()=> Get.to(MyHomePage2()), child: Text('Dialog')),
-            ElevatedButton(onPressed: ()=> Get.to(BottomSheetTheme()), child: Text('Bottom Sheet')),
+            ElevatedButton(onPressed: ()=> Get.to(BottomSheetTheme(),arguments: 'Bottom Sheet & Theme'), child: Text('Bottom Sheet')),
           ],
         ),
       ),

@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:getx/dialog.dart';
 import 'package:getx/snackbar.dart';
 
+import 'bottomsheet.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -36,6 +38,7 @@ class MyHomePage extends StatelessWidget {
           children: [
             ElevatedButton(onPressed: ()=> Get.to(SnacKbar()), child: Text('SnackBar')),
             ElevatedButton(onPressed: ()=> Get.to(MyHomePage2()), child: Text('Dialog')),
+            ElevatedButton(onPressed: ()=> Get.to(BottomSheetTheme()), child: Text('Bottom Sheet')),
           ],
         ),
       ),

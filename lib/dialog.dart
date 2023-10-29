@@ -7,7 +7,7 @@ class MyHomePage2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(child: Scaffold(
-      appBar: AppBar(title: Text('GetX'),centerTitle: true,),
+      appBar: AppBar(title: Text('Dialog Bar'),centerTitle: true,),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

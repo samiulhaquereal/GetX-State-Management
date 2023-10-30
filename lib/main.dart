@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx/dialog.dart';
+import 'package:getx/reactive_state_manager.dart';
 import 'package:getx/routename.dart';
 import 'package:getx/snackbar.dart';
 
@@ -44,6 +45,7 @@ class MyHomePage extends StatelessWidget {
             ElevatedButton(onPressed: ()=> Get.toNamed('/snackbar?channel=Snackbar&content=Yeap Boy'), child: Text('SnackBar')),
             ElevatedButton(onPressed: ()=> Get.toNamed('/dialogpage/Dialog'), child: Text('Dialog')),
             ElevatedButton(onPressed: ()=> Get.to(BottomSheetTheme(),arguments: 'Bottom Sheet & Theme'), child: Text('Bottom Sheet')),
+            ElevatedButton(onPressed: ()=> Get.to(ReactiveState(),arguments: 'Reactive State Management'), child: Text('Reactive State')),
           ],
         ),
       ),

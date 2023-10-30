@@ -1,46 +1,45 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx/controller/ReactiveStateController.dart';
 
 class ReactiveState extends StatelessWidget {
-  RxInt a = 0.obs;
 
-  void increment(){
-    a.value++;
-  }
-  void decrement(){
-    if(a.value>0){
-      a.value--;
-    }else{
-      a.value = 0;
-    }
-  }
+  final ReactiveStateController controller = Get.put(ReactiveStateController());
+
   @override
   Widget build(BuildContext context) {
-
     return SafeArea(
         child: Scaffold(
           appBar: AppBar(title: Text('${Get.arguments}'),),
-      body: Center(
-        child: Obx(()=> Text(a.value.toString(),style: TextStyle(fontSize: 50),)),
+            body: Center(
+              child: Obx(
+                  ()=> Column(
+                  children: [
+                     Text(controller.a.value.toString(),style: TextStyle(fontSize: 50),),
+                     Text(controller.b.toString(),style: TextStyle(fontSize: 50),),
+                  ],
+                ),
+              ),
       ),
-      floatingActionButton: Row(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          FloatingActionButton(
+          floatingActionButton: Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+            FloatingActionButton(
             onPressed: () {
-              increment();
+              controller.increment();
             },
-            child: Icon(Icons.add),
+              child: Icon(Icons.add),
           ),
-          SizedBox(width: 15,),
-          FloatingActionButton(
-            onPressed: () {
-              decrement();
-            },
-            child: Icon(Icons.minimize),
+            SizedBox(width: 15,),
+            FloatingActionButton(
+              onPressed: () {
+              controller.decrement();
+              },
+              child: Icon(Icons.minimize),
           ),
         ],
       ),
-    ));
+    )
+    );
   }
 }

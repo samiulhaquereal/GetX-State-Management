@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx/dialog.dart';
+import 'package:getx/internationalization.dart';
+import 'package:getx/messages.dart';
 import 'package:getx/reactive_state_manager.dart';
 import 'package:getx/routename.dart';
 import 'package:getx/snackbar.dart';
@@ -28,6 +30,9 @@ class MyApp extends StatelessWidget {
       defaultTransition: Transition.rightToLeft,
       getPages: appPages,
       unknownRoute: GetPage(name: '/notfound', page: ()=> unknownRoutepage()),
+      translations: Messages(),
+      locale: Locale('en','US'),
+      fallbackLocale: Locale('en','US'),
     );
   }
 }
@@ -46,6 +51,7 @@ class MyHomePage extends StatelessWidget {
             ElevatedButton(onPressed: ()=> Get.toNamed('/dialogpage/Dialog'), child: Text('Dialog')),
             ElevatedButton(onPressed: ()=> Get.to(BottomSheetTheme(),arguments: 'Bottom Sheet & Theme'), child: Text('Bottom Sheet')),
             ElevatedButton(onPressed: ()=> Get.to(ReactiveState(),arguments: 'Reactive State Management'), child: Text('Reactive State')),
+            ElevatedButton(onPressed: ()=> Get.to(LanguageChange(),arguments: 'Internationalization'), child: Text('Language Change')),
           ],
         ),
       ),

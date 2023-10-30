@@ -8,6 +8,7 @@ class ReactiveState extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //Get.putAsync<ReactiveStateController>(() async => ReactiveStateController());
     return SafeArea(
         child: Scaffold(
           appBar: AppBar(title: Text('${Get.arguments}'),),

@@ -31,4 +31,30 @@ class ReactiveStateController extends GetxController{
     }
   }
 
+  /*void increment() async{
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+    a.value = (preferences.getInt('counter1') ?? 0) + 1;
+    b = (preferences.getInt('counter2') ?? 0) + 1;
+    await preferences.setInt('counter1', a.value);
+    await preferences.setInt('counter2', b);
+    update();
+
+  }
+  void decrement() async{
+    if(a.value>0 || b>0){
+      SharedPreferences preferences = await SharedPreferences.getInstance();
+      a.value = (preferences.getInt('counter1') ?? 0) - 1;
+      b = (preferences.getInt('counter2') ?? 0) - 1;
+      await preferences.setInt('counter1', a.value);
+      await preferences.setInt('counter2', b);
+      update();
+    }else{
+      SharedPreferences preferences = await SharedPreferences.getInstance();
+      a.value = 0;
+      b = 0;
+      await preferences.setInt('counter1', a.value);
+      await preferences.setInt('counter2', b);
+    }
+  }*/
+
 }
